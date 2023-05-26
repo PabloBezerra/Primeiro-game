@@ -78,7 +78,7 @@ while True:
     tela.blit(BACKGROUND, (0, 0))
 
     if is_off_screen(ground_group.sprites()[0]):
-        ground_group.remove(ground_group.sprites()[0])
+        # ground_group.remove(ground_group.sprites()[0])
 
         new_ground = Ground(PISO_LAR)
         ground_group.add(new_ground)
