@@ -226,14 +226,21 @@ background-color: rgba(255, 255, 255, 0);</string>
    <widget class="QLabel" name="informacao">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>310</x>
       <y>20</y>
-      <width>341</width>
+      <width>451</width>
       <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 30px;
+color: rgb(255, 255, 255);</string>
+    </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;INFORMAÇÕES&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Turno do -&amp;gt; O&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QFrame" name="frame">
@@ -254,27 +261,73 @@ background-color: rgba(255, 255, 255, 0);</string>
     <widget class="QLabel" name="placarX">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>110</y>
-       <width>81</width>
-       <height>41</height>
+       <x>70</x>
+       <y>120</y>
+       <width>44</width>
+       <height>53</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 40px;
+color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;00&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="placarO">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>290</y>
-       <width>81</width>
-       <height>41</height>
+       <x>70</x>
+       <y>310</y>
+       <width>44</width>
+       <height>53</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 40px;
+color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;00&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="placar_imgx">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>10</y>
+       <width>121</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="placar_imgo">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>180</y>
+       <width>121</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </widget>
@@ -295,9 +348,9 @@ background-color: rgba(255, 255, 255, 0);</string>
     <property name="geometry">
      <rect>
       <x>310</x>
-      <y>110</y>
+      <y>100</y>
       <width>121</width>
-      <height>121</height>
+      <height>131</height>
      </rect>
     </property>
     <property name="text">
@@ -343,9 +396,9 @@ background-color: rgba(255, 255, 255, 0);</string>
     <property name="geometry">
      <rect>
       <x>620</x>
-      <y>110</y>
+      <y>100</y>
       <width>141</width>
-      <height>121</height>
+      <height>131</height>
      </rect>
     </property>
     <property name="text">
