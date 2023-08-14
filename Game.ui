@@ -214,7 +214,7 @@ background-color: rgba(255, 255, 255, 0);</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>130</y>
+      <y>100</y>
       <width>181</width>
       <height>31</height>
      </rect>
@@ -247,10 +247,13 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>190</y>
+      <y>160</y>
       <width>181</width>
-      <height>361</height>
+      <height>411</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(41, 45, 49);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -262,7 +265,7 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>70</x>
-       <y>120</y>
+       <y>130</y>
        <width>44</width>
        <height>53</height>
       </rect>
@@ -282,7 +285,7 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>70</x>
-       <y>310</y>
+       <y>340</y>
        <width>44</width>
        <height>53</height>
       </rect>
@@ -318,7 +321,7 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>180</y>
+       <y>200</y>
        <width>121</width>
        <height>121</height>
       </rect>
@@ -334,7 +337,7 @@ color: rgb(255, 255, 255);</string>
    <widget class="QLabel" name="titulo">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>30</x>
       <y>30</y>
       <width>181</width>
       <height>31</height>
@@ -347,10 +350,10 @@ color: rgb(255, 255, 255);</string>
    <widget class="QLabel" name="area1">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>300</x>
       <y>100</y>
-      <width>121</width>
-      <height>131</height>
+      <width>141</width>
+      <height>141</height>
      </rect>
     </property>
     <property name="text">
@@ -381,8 +384,8 @@ color: rgb(255, 255, 255);</string>
      <rect>
       <x>460</x>
       <y>100</y>
-      <width>131</width>
-      <height>131</height>
+      <width>141</width>
+      <height>141</height>
      </rect>
     </property>
     <property name="text">
@@ -398,7 +401,7 @@ color: rgb(255, 255, 255);</string>
       <x>620</x>
       <y>100</y>
       <width>141</width>
-      <height>131</height>
+      <height>141</height>
      </rect>
     </property>
     <property name="text">
@@ -411,10 +414,10 @@ color: rgb(255, 255, 255);</string>
    <widget class="QLabel" name="area4">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>300</x>
       <y>260</y>
-      <width>121</width>
-      <height>131</height>
+      <width>141</width>
+      <height>141</height>
      </rect>
     </property>
     <property name="text">
@@ -429,8 +432,8 @@ color: rgb(255, 255, 255);</string>
      <rect>
       <x>460</x>
       <y>260</y>
-      <width>131</width>
-      <height>131</height>
+      <width>141</width>
+      <height>141</height>
      </rect>
     </property>
     <property name="text">
@@ -504,6 +507,27 @@ color: rgb(255, 255, 255);</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>90</y>
+      <width>481</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(41, 45, 49);
+border-radius: 20px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <zorder>frame_2</zorder>
    <zorder>area9</zorder>
    <zorder>area7</zorder>
    <zorder>area6</zorder>
