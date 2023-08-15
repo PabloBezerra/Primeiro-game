@@ -6,74 +6,158 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1080</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Lobby</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(73, 80, 87);</string>
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(2, 22, 86, 255), stop:1 rgba(40, 38, 44, 255));</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>-10</x>
-      <y>0</y>
-      <width>811</width>
-      <height>181</height>
+      <x>230</x>
+      <y>100</y>
+      <width>482</width>
+      <height>74</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Arial Black</family>
+      <pointsize>36</pointsize>
       <bold>true</bold>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: rgba(255, 255, 255, 254);</string>
+    </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt; font-weight:700; color:#ffffff;&quot;&gt;JOGO DA VELHA&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:40pt; color:#ffffff;&quot;&gt;JOGO DA VELHA&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pessoaxrobo">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>280</y>
+      <x>370</x>
+      <y>311</y>
       <width>291</width>
       <height>71</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(28, 123, 212);
+     <string notr="true">background-color: rgb(255, 188, 66);
 border-radius: 20px;
-color: white</string>
+color: white;
+font-size: 40px</string>
     </property>
     <property name="text">
-     <string>PESSOA X ROBO</string>
+     <string>👤 X 🤖</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pessoacontra">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>430</y>
-      <width>281</width>
+      <x>370</x>
+      <y>460</y>
+      <width>291</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 188, 66);
+border-radius: 20px;
+color: white;
+font-size: 40px</string>
+    </property>
+    <property name="text">
+     <string>👤 X 👤</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="img_inicial">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>80</y>
+      <width>101</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: rgba(255, 255, 255, 0) url(:/icons/velha.png) center center no-repeat;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>375</x>
+      <y>316</y>
+      <width>291</width>
       <height>71</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(28, 123, 212);
-border-radius: 20px;
-color: white</string>
+     <string notr="true">background-color: rgb(40, 38, 44);
+border-radius: 20px;</string>
     </property>
     <property name="text">
-     <string>PESSOA X PESSOA</string>
+     <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>375</x>
+      <y>465</y>
+      <width>291</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(40, 38, 44);
+border-radius: 20px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>label_4</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label</zorder>
+   <zorder>pessoaxrobo</zorder>
+   <zorder>pessoacontra</zorder>
+   <zorder>img_inicial</zorder>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="icons/icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

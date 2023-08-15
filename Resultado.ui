@@ -14,21 +14,28 @@
    <string>Resultado</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(73, 80, 87);</string>
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(2, 22, 86, 255), stop:1 rgba(40, 38, 44, 255));
+border-radius:10px</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="resultado">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>180</y>
-      <width>141</width>
-      <height>61</height>
+      <x>50</x>
+      <y>170</y>
+      <width>301</width>
+      <height>41</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
-font-size: 25px</string>
+     <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: rgba(255, 255, 255, 254);</string>
     </property>
     <property name="text">
      <string>RESULTADO</string>
@@ -41,10 +48,13 @@ font-size: 25px</string>
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>30</y>
+      <y>20</y>
       <width>141</width>
       <height>121</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
     </property>
     <property name="text">
      <string/>
@@ -56,11 +66,25 @@ font-size: 25px</string>
    <widget class="QPushButton" name="jogar_novamente">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>260</y>
-      <width>141</width>
-      <height>24</height>
+      <x>40</x>
+      <y>240</y>
+      <width>151</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 188, 66);
+color: rgb(40, 38, 44);
+border-radius:10px</string>
     </property>
     <property name="text">
      <string>Jogar Novamente</string>
@@ -70,15 +94,71 @@ font-size: 25px</string>
     <property name="geometry">
      <rect>
       <x>210</x>
-      <y>260</y>
-      <width>141</width>
-      <height>24</height>
+      <y>240</y>
+      <width>151</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 188, 66);
+color: rgb(40, 38, 44);
+border-radius:10px</string>
     </property>
     <property name="text">
      <string>Finalizar</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>43</x>
+      <y>243</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(40, 38, 44);
+color: rgb(40, 38, 44);
+border-radius:10px</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>213</x>
+      <y>243</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(40, 38, 44);
+color: rgb(40, 38, 44);
+border-radius:10px</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>label_2</zorder>
+   <zorder>label</zorder>
+   <zorder>resultado</zorder>
+   <zorder>logo</zorder>
+   <zorder>jogar_novamente</zorder>
+   <zorder>finalizar</zorder>
   </widget>
  </widget>
  <resources/>

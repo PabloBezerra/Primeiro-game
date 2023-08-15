@@ -7,37 +7,47 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>350</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Escolha</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(73, 80, 87);</string>
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(2, 22, 86, 255), stop:1 rgba(40, 38, 44, 255));
+border-radius:20px;
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="caixax">
+   <widget class="QLabel" name="caixaX">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>100</y>
+      <x>50</x>
+      <y>90</y>
       <width>131</width>
       <height>141</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 0);
+border: 0px solid rgba(255, 255, 255, 0)</string>
     </property>
     <property name="text">
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="caixao">
+   <widget class="QLabel" name="caixaO">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>100</y>
+      <x>220</x>
+      <y>90</y>
       <width>131</width>
       <height>141</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 0);
+</string>
     </property>
     <property name="text">
      <string/>
@@ -47,16 +57,23 @@
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>40</y>
-      <width>83</width>
+      <y>30</y>
+      <width>88</width>
       <height>27</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="focusPolicy">
      <enum>Qt::StrongFocus</enum>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
+     <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: rgba(255, 255, 255, 254);
 font-size: 20px;</string>
     </property>
     <property name="text">
@@ -69,10 +86,10 @@ font-size: 20px;</string>
    <widget class="QPushButton" name="btn_caixax">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>50</x>
       <y>90</y>
-      <width>151</width>
-      <height>151</height>
+      <width>131</width>
+      <height>141</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -87,8 +104,8 @@ font-size: 20px;</string>
      <rect>
       <x>220</x>
       <y>90</y>
-      <width>151</width>
-      <height>151</height>
+      <width>131</width>
+      <height>141</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -98,6 +115,296 @@ font-size: 20px;</string>
      <string/>
     </property>
    </widget>
+   <widget class="QPushButton" name="play_robo">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>280</y>
+      <width>75</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 188, 66);
+color: rgbrgb(40, 38, 44);
+border-radius: 15px;
+font-size:20px</string>
+    </property>
+    <property name="text">
+     <string>Play</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>250</y>
+      <width>82</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: rgba(255, 255, 255, 254);
+font-size:20px</string>
+    </property>
+    <property name="text">
+     <string>Jogador:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>32</x>
+      <y>284</y>
+      <width>252</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(40, 38, 44);
+color: rgb(40, 38, 44);
+border-radius:15px</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>297</x>
+      <y>283</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(40, 38, 44);
+color: rgb(40, 38, 44);
+border-radius:15px</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="player_robo">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>280</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgba(129, 129, 129, 254);
+font-size: 20px;
+border-radius: 15px</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>Player1</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="pvp">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>400</width>
+      <height>350</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLineEdit" name="player_1">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>251</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 20px;
+font-size:15px</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="placeholderText">
+      <string>Player 1</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="player_2">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>240</y>
+       <width>251</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 20px;
+font-size:15px</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="placeholderText">
+      <string>Player 2</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="play_pvp">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>300</y>
+       <width>251</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 188, 66);
+color: rgb(40, 38, 44);
+border-radius: 20px;</string>
+     </property>
+     <property name="text">
+      <string>Play</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>34</y>
+       <width>75</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Jogador 1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>245</y>
+       <width>75</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Jogador 2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="caixaxpvp">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>90</y>
+       <width>111</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="caixaopvp">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>90</y>
+       <width>121</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <zorder>label_4</zorder>
+   <zorder>label_2</zorder>
+   <zorder>caixaX</zorder>
+   <zorder>caixaO</zorder>
+   <zorder>label_3</zorder>
+   <zorder>btn_caixax</zorder>
+   <zorder>btn_caixao</zorder>
+   <zorder>play_robo</zorder>
+   <zorder>label</zorder>
+   <zorder>player_robo</zorder>
+   <zorder>pvp</zorder>
   </widget>
  </widget>
  <resources/>

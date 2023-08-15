@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>../velha.png</file>
+  </qresource>
+</RCC>
