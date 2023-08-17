@@ -80,7 +80,7 @@ def verificador():  # função que verifica a posição das areas marcadas
 def atualizador():  # função qua atualiza a vez do jogador na partida 
     x = choice(restantes)
     if contador % 2 == 0:
-        game.informacao.setText('Turno do -> O')
+        game.informacao.setText(f'Turno de {jogador1}')
         game.placar_imgx.setPixmap(QtGui.QPixmap('X.png'))
         game.placar_imgo.setPixmap(QtGui.QPixmap('O_over.png'))
         QtWidgets.QApplication.processEvents()
@@ -88,7 +88,7 @@ def atualizador():  # função qua atualiza a vez do jogador na partida
             sleep(0.5)
             exec(f'area{x}.marcar()')
     else:
-        game.informacao.setText('Turno do -> X')
+        game.informacao.setText(f'Turno de {jogador2}')
         game.placar_imgx.setPixmap(QtGui.QPixmap('X_over.png'))
         game.placar_imgo.setPixmap(QtGui.QPixmap('O.png'))
         QtWidgets.QApplication.processEvents()
@@ -134,7 +134,7 @@ def limpar():  # limpeza da area marcada anteriormente e reinicialização de al
         exec(f"area{n}.marcado = ''")
 
 
-def config(c, e):  # configura o jogo contra o computador conforme a escolha de peças do jogador
+def config_pvr(c, e):  # configura o jogo contra o computador conforme a escolha de peças do jogador
     global contador, estado, jogador1, jogador2
     contador = 1 if c == 'O' else 0
     estado = c
@@ -144,8 +144,16 @@ def config(c, e):  # configura o jogo contra o computador conforme a escolha de 
     jogador1 = escolha.player_robo.text() if escolha.player_robo.text() != '' else 'Player 1'
 
 
+def config_pvp():
+    global jogador1, jogador2
+    jogador1 = pvp.player_1.text() if pvp.player_1 != '' else 'Player 1'
+    jogador2 = pvp.player_2.text() if pvp.player_2 != '' else 'Player 2'
+    fechaconfig()
+
+
 def fechaconfig():
     escolha.close()
+    pvp.close()
     game.cortina.close()
     atualizador()
 
@@ -174,18 +182,12 @@ def load(n):  # Carrega e configura as informações iniciais do jogo
     game.placarX.setText(str(placarX).zfill(2))
     placarO = 0
     game.placarO.setText(str(placarX).zfill(2))
-    game.placar_imgx.setPixmap(QtGui.QPixmap('X.png'))
-    game.placar_imgo.setPixmap(QtGui.QPixmap('O_over.png'))
-    escolha.show()
     if n == 1:
         bot = True
-        escolha.pvp.close()
-        escolha.caixaX.setPixmap(QtGui.QPixmap('X.png'))
-        escolha.caixaO.setPixmap(QtGui.QPixmap('O.png'))
+        escolha.show()
     else:
         bot = False
-        escolha.caixaxpvp.setPixmap(QtGui.QPixmap('X.png'))
-        escolha.caixaopvp.setPixmap(QtGui.QPixmap('O.png'))
+        pvp.show()
 
 
 for n in range(1, 10):  # criação da sintâncias das areas
@@ -199,16 +201,27 @@ app = QtWidgets.QApplication([])
 
 lobby = uic.loadUi('Looby.ui')  # janela de entrada
 lobby.setFixedSize(1080, 720)
-lobby.show()
 lobby.img_inicial.setPixmap(QtGui.QPixmap('velha.png'))
+lobby.show()
 
-escolha = uic.loadUi('Escolha.ui')  # janela de escolha de peças
+pvp = uic.loadUi('PvP.ui')  # janela de seleção para pessoa vsrsus pessoa
+pvp.setWindowFlags(Qt.WindowType.FramelessWindowHint)
+pvp.setWindowModality(Qt.WindowModality.ApplicationModal)
+pvp.caixaX.setPixmap(QtGui.QPixmap('X.png'))
+pvp.caixaO.setPixmap(QtGui.QPixmap('O.png'))
+pvp.close()
+
+escolha = uic.loadUi('Escolha.ui')  # janela de seleção conta o pc
 escolha.setWindowFlags(Qt.WindowType.FramelessWindowHint)
 escolha.setWindowModality(Qt.WindowModality.ApplicationModal)
+escolha.caixaX.setPixmap(QtGui.QPixmap('X.png'))
+escolha.caixaO.setPixmap(QtGui.QPixmap('O.png'))
 escolha.close()
 
 game = uic.loadUi('Game.ui')  # janela principal do jogo
 game.setFixedSize(1080, 720)
+game.placar_imgx.setPixmap(QtGui.QPixmap('X.png'))
+game.placar_imgo.setPixmap(QtGui.QPixmap('O_over.png'))
 game.close()
 
 resultado = uic.loadUi('Resultado.ui')  # janela final que mostra o resultado
@@ -221,9 +234,11 @@ resultado.close()
 lobby.pessoaxrobo.clicked.connect(lambda: load(1))
 lobby.pessoacontra.clicked.connect(lambda: load(2))
 
-escolha.btn_caixax.clicked.connect(lambda: config('X', 'O'))
-escolha.btn_caixao.clicked.connect(lambda: config('O', 'X'))
+escolha.btn_caixax.clicked.connect(lambda: config_pvr('X', 'O'))
+escolha.btn_caixao.clicked.connect(lambda: config_pvr('O', 'X'))
 escolha.play_robo.clicked.connect(fechaconfig)
+
+pvp.play.clicked.connect(config_pvp)
 
 for num in range(1, 10):
     exec(f'game.btn{num}.clicked.connect(lambda: area{num}.marcar())')
