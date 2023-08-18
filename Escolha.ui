@@ -23,7 +23,7 @@ border-radius:20px;
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>90</y>
+      <y>60</y>
       <width>131</width>
       <height>141</height>
      </rect>
@@ -40,7 +40,7 @@ border: 0px solid rgba(255, 255, 255, 0)</string>
     <property name="geometry">
      <rect>
       <x>220</x>
-      <y>90</y>
+      <y>60</y>
       <width>131</width>
       <height>141</height>
      </rect>
@@ -144,7 +144,7 @@ font-size:20px</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>240</y>
+      <y>230</y>
       <width>82</width>
       <height>27</height>
      </rect>

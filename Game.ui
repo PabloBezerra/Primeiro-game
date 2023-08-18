@@ -52,7 +52,7 @@ font-size: 25px;
 color: rgba(255, 255, 255,255);</string>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Turno do -&amp;gt; O&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Turnos&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -624,14 +624,14 @@ border-radius: 20px;</string>
    <widget class="QFrame" name="cortina">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>1080</width>
-      <height>720</height>
+      <x>-1</x>
+      <y>-1</y>
+      <width>1082</width>
+      <height>722</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgba(40, 38, 44, 100);</string>
+     <string notr="true">background-color: rgba(40, 38, 44, 200);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
