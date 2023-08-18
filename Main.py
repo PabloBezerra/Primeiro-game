@@ -170,7 +170,7 @@ def comp(li1, li2, l):  # faz análise das posições marcadas com as possiveis 
                 li.append(item1)
     if li == li2:
         for n in li2:
-            exec(f"game.area{n}.setPixmap(QtGui.QPixmap('{l}_over.png'))")
+            exec(f'{l}.mostrar_over(game.area{n})')
         QtWidgets.QApplication.processEvents()
         sleep(1)
         return True
