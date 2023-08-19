@@ -11,10 +11,10 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Lobby</string>
+   <string>Jogo da velha</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(2, 22, 86, 255), stop:1 rgba(40, 38, 44, 255));</string>
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(164, 66, 0, 255), stop:1 rgba(60, 21, 24, 255));</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
@@ -117,14 +117,14 @@ font-size: 40px</string>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>375</x>
-      <y>316</y>
+      <x>374</x>
+      <y>315</y>
       <width>291</width>
       <height>71</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(40, 38, 44);
+     <string notr="true">background-color: rgb(60, 21, 24);
 border-radius: 20px;</string>
     </property>
     <property name="text">
@@ -134,14 +134,14 @@ border-radius: 20px;</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>375</x>
-      <y>465</y>
+      <x>374</x>
+      <y>464</y>
       <width>291</width>
       <height>71</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(40, 38, 44);
+     <string notr="true">background-color: rgb(60, 21, 24);
 border-radius: 20px;</string>
     </property>
     <property name="text">
@@ -156,8 +156,6 @@ border-radius: 20px;</string>
    <zorder>img_inicial</zorder>
   </widget>
  </widget>
- <resources>
-  <include location="icons/icons.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

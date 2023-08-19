@@ -14,9 +14,8 @@
    <string>Escolha</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(2, 22, 86, 255), stop:1 rgba(40, 38, 44, 255));
-border-radius:20px;
-</string>
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(164, 66, 0, 255), stop:1 rgba(60, 21, 24, 255));
+border-radius:20px;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="caixaX">
@@ -57,7 +56,7 @@ border: 0px solid rgba(255, 255, 255, 0)</string>
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>20</y>
+      <y>10</y>
       <width>88</width>
       <height>27</height>
      </rect>
@@ -119,9 +118,9 @@ font-size: 20px;</string>
     <property name="geometry">
      <rect>
       <x>290</x>
-      <y>280</y>
+      <y>290</y>
       <width>75</width>
-      <height>41</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -130,9 +129,15 @@ font-size: 20px;</string>
       <bold>true</bold>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 188, 66);
-color: rgbrgb(40, 38, 44);
+color: rgba(255, 255, 255, 254);
 border-radius: 15px;
 font-size:20px</string>
     </property>
@@ -144,7 +149,7 @@ font-size:20px</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>230</y>
+      <y>250</y>
       <width>82</width>
       <height>27</height>
      </rect>
@@ -168,13 +173,13 @@ font-size:20px</string>
     <property name="geometry">
      <rect>
       <x>32</x>
-      <y>284</y>
+      <y>293</y>
       <width>252</width>
-      <height>41</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(40, 38, 44);
+     <string notr="true">background-color: rgb(60, 21, 24);
 color: rgb(40, 38, 44);
 border-radius:15px</string>
     </property>
@@ -185,14 +190,14 @@ border-radius:15px</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>297</x>
-      <y>283</y>
+      <x>296</x>
+      <y>293</y>
       <width>71</width>
-      <height>41</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(40, 38, 44);
+     <string notr="true">background-color: rgb(60, 21, 24);
 color: rgb(40, 38, 44);
 border-radius:15px</string>
     </property>
@@ -204,9 +209,9 @@ border-radius:15px</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>280</y>
+      <y>290</y>
       <width>251</width>
-      <height>41</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -219,7 +224,28 @@ border-radius: 15px</string>
      <set>Qt::AlignCenter</set>
     </property>
     <property name="placeholderText">
-     <string>Player1</string>
+     <string>Player 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="erro_escolha">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>220</y>
+      <width>231</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: rgb(249, 29, 40);
+font-size:20px</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <zorder>label_4</zorder>
@@ -232,6 +258,7 @@ border-radius: 15px</string>
    <zorder>play_robo</zorder>
    <zorder>label</zorder>
    <zorder>player_robo</zorder>
+   <zorder>erro_escolha</zorder>
   </widget>
  </widget>
  <resources/>

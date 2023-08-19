@@ -73,6 +73,10 @@ def load(n):  # Função responsavel por dar inicio ao jogo
     global contador
     lobby.close()
     game.show()
+    game.placar_playerx.setText('')
+    game.placar_playero.setText('')
+    X.mostrar(game.placar_imgx)
+    O.mostrar(game.placar_imgo)
     limpar()
     game.cortina.show()
     O.placar = X.placar = 00
@@ -86,16 +90,23 @@ def load(n):  # Função responsavel por dar inicio ao jogo
         escolha.btn_caixax.clicked.connect(lambda: config_pvr(1))
         escolha.btn_caixao.clicked.connect(lambda: config_pvr(2))
         escolha.play_robo.clicked.connect(lambda: config_pvr(3))
+        escolha.erro_escolha.setText('')
+        O.mostrar(escolha.caixaO)
+        X.mostrar(escolha.caixaX)
     else:
         pvp.show()
+        X.mostrar(pvp.caixaX)
+        O.mostrar(pvp.caixaO)
         pvp.play.clicked.connect(config_pvp)
 
 
 def config_pvp():  # Configurações do modo de jogo pessoa contra pessoa
+    global estado
     O.player = str(pvp.player_1.text()).capitalize() if pvp.player_1.text() != '' else 'Player 1'
     X.player = str(pvp.player_2.text()).capitalize() if pvp.player_2.text() != '' else 'Player 2'
     game.cortina.close()
     pvp.close()
+    estado = ''
     atualizador()
 
 
@@ -112,22 +123,27 @@ def config_pvr(n):  # Configurações do modo de jogo pessoa contra robô
         X.player = 'Robô'
         estado = X.tipo
     else:
-        if estado == O.tipo:
-            X.player = str(escolha.player_robo.text()).capitalize() if escolha.player_robo.text() != '' else 'Player 1'
+        if estado == '':
+            escolha.erro_escolha.setText('🔺  Por favor! Escolha   🔺')
         else:
-            O.player = str(escolha.player_robo.text()).capitalize() if escolha.player_robo.text() != '' else 'Player 1'
-        game.cortina.close()
-        escolha.close()
-        atualizador()
+            if estado == O.tipo:
+                X.player = str(escolha.player_robo.text()).capitalize() if escolha.player_robo.text() != '' else 'Player 1'
+            else:
+                O.player = str(escolha.player_robo.text()).capitalize() if escolha.player_robo.text() != '' else 'Player 1'
+            game.cortina.close()
+            escolha.close()
+            atualizador()
 
 
 def atualizador():  # Função respondavel pela atualização do jogo
     global turno
     turno = O.tipo if contador % 2 == 0 else X.tipo
     x = choice(restantes)
+    game.placar_playerx.setText(X.player)
+    game.placar_playero.setText(O.player)
 
     if turno == 'O':
-        game.informacao.setText(f'Turno do {O.player}')
+        game.informacao.setText(f'Turno de {O.player}') if O.player != 'Robô' else game.informacao.setText(f'Turno do {O.player}')
         O.mostrar_over(game.placar_imgo)
         X.mostrar(game.placar_imgx)
         QtWidgets.QApplication.processEvents()
@@ -135,7 +151,7 @@ def atualizador():  # Função respondavel pela atualização do jogo
             sleep(0.5)
             exec(f'area{x}.marcar()')
     else:
-        game.informacao.setText(f'Turno do {X.player}')
+        game.informacao.setText(f'Turno de {X.player}') if X.player != 'Robô' else game.informacao.setText(f'Turno do {X.player}')
         O.mostrar(game.placar_imgo)
         X.mostrar_over(game.placar_imgx)
         QtWidgets.QApplication.processEvents()
@@ -180,10 +196,10 @@ def conclusao(n= 0):  # Função responsavel pela conclusão da partida e exibi�
     game.cortina.show()
     resultado.show()
     if n == 1:
-        O.mostrar(resultado.logo)
+        O.mostrar_over(resultado.logo)
         resultado.resultado.setText(f'{O.player} Venceu!')
     elif n == 2:
-        X.mostrar(resultado.logo)
+        X.mostrar_over(resultado.logo)
         resultado.resultado.setText(f'{X.player} Venceu!')
     else:
         resultado.logo.setPixmap(QtGui.QPixmap('velha.png'))
@@ -202,6 +218,7 @@ def limpar():  # Função que reseta as configurações para uma nova partida
             exec(f'area{n}.condicao = True')
             exec(f"area{n}.marcado = ''")
 
+
 def reiniciar(n):  #Função de dá inicio a uma nova partida ou retorna ao inicio para acessar outro modo de jogo
     if n == 1:
         limpar()
@@ -211,6 +228,7 @@ def reiniciar(n):  #Função de dá inicio a uma nova partida ou retorna ao inic
         lobby.show()
         lobby.img_inicial.setPixmap(QtGui.QPixmap('velha.png'))
     resultado.close()
+
 
 for n in range(1, 10):  # criação da sintâncias das areas
     exec(f'area{n} = Area(n)')
@@ -227,26 +245,22 @@ app = QtWidgets.QApplication([])
 lobby = uic.loadUi('Looby.ui')  # janela de entrada
 lobby.setFixedSize(1080, 720)
 lobby.img_inicial.setPixmap(QtGui.QPixmap('velha.png'))
+lobby.setWindowIcon(QtGui.QIcon('velha.png'))
 lobby.show()
 
 pvp = uic.loadUi('PvP.ui')  # janela de seleção para pessoa vsrsus pessoa
 pvp.setWindowFlags(Qt.WindowType.FramelessWindowHint)
 pvp.setWindowModality(Qt.WindowModality.ApplicationModal)
-X.mostrar(pvp.caixaX)
-O.mostrar(pvp.caixaO)
 pvp.close()
 
 escolha = uic.loadUi('Escolha.ui')  # janela de seleção conta o pc
 escolha.setWindowFlags(Qt.WindowType.FramelessWindowHint)
 escolha.setWindowModality(Qt.WindowModality.ApplicationModal)
-X.mostrar(escolha.caixaX)
-O.mostrar(escolha.caixaO)
 escolha.close()
 
 game = uic.loadUi('Game.ui')  # janela principal do jogo
 game.setFixedSize(1080, 720)
-X.mostrar(game.placar_imgx)
-O.mostrar(game.placar_imgo)
+game.setWindowIcon(QtGui.QIcon('velha.png'))
 game.close()
 
 resultado = uic.loadUi('Resultado.ui')  # janela final que mostra o resultado
@@ -258,8 +272,6 @@ resultado.close()
 
 lobby.pessoaxrobo.clicked.connect(lambda: load(1))
 lobby.pessoacontra.clicked.connect(lambda: load(2))
-
-pvp.play.clicked.connect(config_pvp)
 
 for num in range(1, 10):
     exec(f'game.btn{num}.clicked.connect(lambda: area{num}.marcar())')
